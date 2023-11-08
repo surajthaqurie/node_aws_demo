@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "e6c7993d-193f-4049-8640-12365dc8d335",
+		"name": "AWS S3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19084891",
+		"_collection_link": "https://aitc-api.postman.co/workspace/Team-Workspace~c697910e-ae16-4fe6-813f-e76f1908a099/collection/19084891-e6c7993d-193f-4049-8640-12365dc8d335?action=share&source=collection_link&creator=19084891"
+	},
+	"item": [
+		{
+			"name": "Get: API TEST",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post: Add Asset To Bucket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "text",
+							"value": "Hello World !!",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/HimanshuMarasini/Desktop/images.jfif"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/upload",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get: All Objects From Bucket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "text",
+							"value": "Hello World !!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/bucket/files",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"bucket",
+						"files"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get: Object From Bucket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "text",
+							"value": "Hello World !!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/bucket/files/27e51c69-0095-4089-8b6d-1c4db6b06e33_1.jpg",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"bucket",
+						"files",
+						"27e51c69-0095-4089-8b6d-1c4db6b06e33_1.jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete: Object from bucket",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "text",
+							"value": "Hello World !!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/bucket/files?filename=27e51c69-0095-4089-8b6d-1c4db6b06e33_1.jpg",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"bucket",
+						"files"
+					],
+					"query": [
+						{
+							"key": "filename",
+							"value": "27e51c69-0095-4089-8b6d-1c4db6b06e33_1.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get: Download File From CDN",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "text",
+							"value": "Hello World !!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/download/file?filename=test/0c37865b-7eab-4fc2-b0da-658a03e6b72b_1.jpg",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"download",
+						"file"
+					],
+					"query": [
+						{
+							"key": "filename",
+							"value": "test/0c37865b-7eab-4fc2-b0da-658a03e6b72b_1.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
